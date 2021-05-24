@@ -1,0 +1,80 @@
+function pigLatin($words = array()){
+    //loop input
+    foreach($words as $word){
+        $wordsWithSpace= explode(' ', $word);
+        $regex = '/^[a-zA-Z ]*$/';
+        
+        if(count($wordsWithSpace) > 1){
+            foreach ($wordsWithSpace as $word){
+                //check if valid input
+            	if(!isset($word) || empty($word) || !is_string($word) || is_numeric($word) || !preg_match($regex, $word)){
+            		echo "invalid input\n";
+            	}else{
+                	echo processPigLatin($word)." ";
+            	}
+            }
+        }else{
+            echo "\n";
+            //check if valid input
+            if(!isset($word) || empty($word) || !is_string($word) || is_numeric($word) || !preg_match($regex, $word)){
+            	echo "invalid input\n";
+            }else{
+                echo processPigLatin($word)."\n";
+            }
+        }
+    }
+
+}
+
+function processPigLatin($word){
+    $word = strtolower($word);
+    $vowels = array('a','e','i','o','u');
+    $pigLatinWord = "";
+        
+    $firstLetter = substr($word, 0, 1);
+    //process "pig latin"
+    if(in_array($firstLetter, $vowels)){
+        $pigLatinWord = $word ."way";
+    }else{
+        $newWord = substr($word, 1);
+        $pigLatinWord .= $newWord;
+    	$pigLatinWord .= $firstLetter;
+        $pigLatinWord .= "ay";
+    }
+    return $pigLatinWord;
+}
+
+
+
+
+<script>
+
+	function fibonacci(number){
+		//check input if valid
+		if(isNaN(number) || number == "" || number.length === 0 || number < 0){
+			console.log('invalid input');
+		}
+
+		Math.abs(number);
+
+		var first = 0;
+		var second = 1;
+		var nextNumber;
+		var output = [];
+		
+		for(i = 0; i <= number; i++){
+			output[i] = first;
+			nextNumber = first + second;
+			first = second;
+			second = nextNumber;
+		}
+
+		console.log(output.toString());
+
+
+	}
+	// change input here
+	fibonacci(10);
+
+
+</script>
