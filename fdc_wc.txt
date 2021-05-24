@@ -1,3 +1,8 @@
+/*===============================================
+Pig Latin (25 Points) - ( PHP )
+===============================================*/
+
+<?php
 function pigLatin($words = array()){
     //loop input
     foreach($words as $word){
@@ -43,8 +48,15 @@ function processPigLatin($word){
     }
     return $pigLatinWord;
 }
+//change input here
+pigLatin([‘test’, ‘aster’]);
+?>
 
 
+
+/*===============================================
+Fibonacci Series (25 Points) - ( Javascript )
+===============================================*/
 
 
 <script>
